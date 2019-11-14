@@ -7,16 +7,39 @@
   <title>Data Visualization Project</title>
 
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/d3.js"></script>
 
 </head>
 
 <body>
-  <div id="header">
-      <div id="header-title">
+  <div id="header" class="full-screen">
+    <div id="header-title">
         <h1 id='header-text'>Insight Into</h1>
         <h1 id='header-text'>Global Terrorist Attacks</h1>
-      </div>
+    </div>
   </div>
+  <div id="overview" class="full-screen">
+    <!-- Total 17531 days, total 872892 deaths or wounds
+         Total 181691 events
+         How many days are safe?  1462
+         Count of events with ideath over 100: 224
+         How many countries have been affected? 205
+    -->
+    <div id="overview-paragraph">
+        <h1 class='overview-text'>
+            There are in total <span class="overview-highlight-text">181,691</span> terrorist attacks from 1970 to 2017.
+            Around <span class="overview-highlight-text">872,892</span> people were killed or wounded in those attacks.
+            That is, nearly <span class="overview-highlight-text">50</span> people were killed or wounded each day.
+            In <span class="overview-highlight-text">224</span> terrorist attacks, at least <span class="overview-highlight-text">100</span> people were killed.
+            Among those 17,531 days, only <span class="overview-highlight-text">1,462</span> days are completely free of terrorist attacks.
+        </h1>
+        <h1 class="overview-highlight-text overview-text">WE ARE NOT SAFE.</h1>
+    </div>
+  </div>
+  <div id="vis-overview"></div>
+  <div id="vis-individual" class="canvas"></div>
   <script src="js/index.js"></script>
+  <script src="js/overview.js"></script>
+  <script src="js/individual.js"></script>
 </body>
 </html>
