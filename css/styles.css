@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#header {
+    width: 100%;
+    background-image: url('../static/911-towers-img.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+#header-title {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: white;
+}
+
+#header-text {
+    font-size: 4em;
+    margin: 0;
+    margin-left: 30px;
+}
