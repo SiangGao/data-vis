@@ -6,6 +6,9 @@
 
   <title>Data Visualization Project</title>
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/d3.js"></script>
 
@@ -38,8 +41,24 @@
   </div>
   <div id="vis-overview"></div>
   <div id="vis-individual" class="canvas"></div>
+  <div id="country-group" class="full-screen">
+    <div style="text-align: center;">
+      <h1>Some Text Here...</h1>
+      <button type="button" class="btn btn-outline-dark" onclick="toggle(false)" id="country-group-btn1">Death Count</button>
+      <button type="button" class="btn btn-outline-dark" onclick="toggle(true)" id="country-group-btn2">By Country</button>
+    </div>
+    <div style="height:40%; width:100%; padding-left: 50px; padding-right: 50px;">
+        <div style="position: relative; height:100%; width:50%; max-width: 500px;">
+          <canvas id="country-group-canvas1"></canvas>
+        </div>
+    </div>
+    <div style="height:40%; width:100%; padding-left: 50px; padding-right: 50px;">
+      <canvas id="country-group-canvas2"></canvas>
+    </div>
+  </div>
   <script src="js/index.js"></script>
   <script src="js/overview.js"></script>
   <script src="js/individual.js"></script>
+  <script src="js/country-group.js"></script>
 </body>
 </html>
