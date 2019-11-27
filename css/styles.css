@@ -45,8 +45,17 @@ html, body {
     padding-right: 100px;
 }
 
+.margin-v-40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 .bg-black {
     background-color: black;
+}
+
+.bg-darkgray {
+    background-color: rgb(40, 40, 40);
 }
 
 .max-width-1000 {
