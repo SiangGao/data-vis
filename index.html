@@ -6,29 +6,75 @@
 
   <title>Data Visualization Project</title>
 
+  <!-- Load Font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap" rel="stylesheet">
+
+  <!-- Load Bootstrap Styles -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- For drawing charts -->
+  <!-- D3 -->
+  <script src="js/d3.js"></script>
+  <!-- P5 -->
+  <script src="js/p5.min.js"></script>
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+
+  
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/d3.js"></script>
 
 </head>
 
 <body>
-  <div id="header" class="full-screen">
+  <!-- Page 1: Title Page -->
+  <div class="full-height ch-v-center" id="title-page-out-div">
+    <div class="pad-h-40">
+      <p class="bold size-80 color-white">Insight Into</p>
+      <p class="bold size-80 color-white">Global Terrorist Attacks</p>
+    </div>
+  </div>
+  <!-- Page 2: Introduction (List some numbers) -->
+  <div class="full-height ch-v-center ch-h-center bg-black">
+    <div class="pad-h-100 max-width-1000">
+        <p class="size-40 color-white">
+          There are in total <span class="bold color-dred">181,691</span> terrorist attacks from 1970 to 2017.
+          Around <span class="bold color-dred">872,892</span> people were killed or wounded in those attacks.
+          That is, nearly <span class="bold color-dred">50</span> people were killed or wounded each day.
+          In <span class="bold color-dred">224</span> terrorist attacks, at least <span class="bold color-dred">100</span> people were killed.
+          Among those 17,531 days, only <span class="bold color-dred">1,462</span> days are completely free of terrorist attacks.
+        </p>
+        <p class="color-dred bold size-40">
+          WE ARE NOT SAFE.
+        </p>
+    </div>
+  </div>
+  <!-- Page 3: Line chart showing casualty and count by year -->
+  <div class="full-height pos-relative" id="casualty-count-div">
+    <p class="bold size-80 color-white upper-left">Number of Casualties</p>
+    <p class="bold size-80 color-white bottom-left">Number of Incidents</p>
+  </div>
+  <script src="js/casualty-count.js"></script>
+  <!-- Page 4: Scatter plot showing individual incidents -->
+  <div class="full-height pos-relative bg-black" id="individual-incident-div">
+    <p class="bold size-80 color-white upper-left">Number of People Killed<br/>For Each Individual Attacks</p>
+  </div>
+  <script src="js/individual-incident.js"></script>
+  <!-- <div id="header" class="full-screen">
     <div id="header-title">
         <h1 id='header-text'>Insight Into</h1>
         <h1 id='header-text'>Global Terrorist Attacks</h1>
     </div>
   </div>
-  <div id="overview" class="full-screen">
+  <div id="overview" class="full-screen"> -->
     <!-- Total 17531 days, total 872892 deaths or wounds
          Total 181691 events
          How many days are safe?  1462
          Count of events with ideath over 100: 224
          How many countries have been affected? 205
     -->
-    <div id="overview-paragraph">
+    <!-- <div id="overview-paragraph">
         <h1 class='overview-text'>
             There are in total <span class="overview-highlight-text">181,691</span> terrorist attacks from 1970 to 2017.
             Around <span class="overview-highlight-text">872,892</span> people were killed or wounded in those attacks.
@@ -59,6 +105,6 @@
   <script src="js/index.js"></script>
   <script src="js/overview.js"></script>
   <script src="js/individual.js"></script>
-  <script src="js/country-group.js"></script>
+  <script src="js/country-group.js"></script> -->
 </body>
 </html>

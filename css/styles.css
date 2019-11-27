@@ -1,7 +1,56 @@
-body {
+html, body {
     margin: 0;
-    font-family: Verdana, Geneva, sans-serif;
-    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    line-height: normal;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.size-80 {
+    font-size: 80px;
+}
+
+.size-40 {
+    font-size: 40px;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-dred {
+    color: darkred;
+}
+
+.ch-v-center {
+    display: flex;
+    align-items: center;
+}
+
+.ch-h-center {
+    display: flex;
+    justify-content: center;
+}
+
+.pad-h-40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.pad-h-100 {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.max-width-1000 {
+    max-width: 1000px;
 }
 
 #header {
@@ -10,8 +59,38 @@ body {
     position: relative;
 }
 
-.full-screen {
-    width: 100%;
+#title-page-out-div {
+    background-image: url('../static/911-towers-img.jpg');
+    background-size: cover;
+}
+
+.full-height {
+    height: 100%;
+}
+
+#casualty-count-div {
+    background-image: url('../static/oklahoma.png');
+    background-size: cover;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.upper-left {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+}
+
+.send-to-back {
+    z-index: 0;
 }
 
 #overview {
