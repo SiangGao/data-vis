@@ -12,7 +12,7 @@ let casualty_count_p5 = new p5(function(p) {
     let data;
 
     p.preload = function() {
-        data = p.loadJSON("data/days_highlight.json");
+        data = p.loadJSON("http://gaosa.me/data-vis/data/days_highlight.json");
     };
 
     p.calcCoordinate = function() {
@@ -178,7 +178,7 @@ const drawDots = function(width, height, data) {
 // Draw all the dots
 
 const fetchAndDraw = function() {
-    fetch('data/days_death.json')
+    fetch('http://gaosa.me/data-vis/data/days_death.json')
         .then((resp) => resp.json())
         .then(function(data) {
             drawDots(parentDiv.clientWidth, parentDiv.clientHeight, data);

@@ -4,7 +4,7 @@ let heatmap_p5 = new p5(function(p) {
     let dat, years, data, groups;
 
     p.preload = function() {
-        dat = p.loadJSON("data/group_cnt.json");
+        dat = p.loadJSON("http://gaosa.me/data-vis/data/group_cnt.json");
     };
 
     p.setup = function() {
