@@ -83,6 +83,12 @@ html, body {
     left: 40px;
 }
 
+.upper-left-sm {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 .bottom-left {
     position: absolute;
     bottom: 60px;

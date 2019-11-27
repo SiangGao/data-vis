@@ -13,7 +13,7 @@ let casualty_count_p5 = new p5(function(p) {
 
     p.preload = function() {
         data = p.loadJSON("data/days_highlight.json");
-    }
+    };
 
     p.calcCoordinate = function() {
         const xlo = 10;
@@ -126,7 +126,7 @@ let casualty_count_p5 = new p5(function(p) {
                 }
         }
         if (idx !== -1) {
-            p.textSize(20);
+            p.textSize(15);
             p.strokeWeight(2);
             p.stroke("black");
             p.textAlign(p.RIGHT, p.TOP);

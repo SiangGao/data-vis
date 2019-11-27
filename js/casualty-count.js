@@ -18,7 +18,9 @@ let individual_incident_p5 = new p5(function(p) {
     const dotWidth = 20;
 
     p.setup = function() {
-        p.createCanvas(parentDiv.clientWidth, parentDiv.clientHeight);
+        const canvas = p.createCanvas(parentDiv.clientWidth, parentDiv.clientHeight);
+        canvas.style("position", "absolute");
+        canvas.style("z-index", 2);
         p.textStyle(p.BOLD);
     };
 
