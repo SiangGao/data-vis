@@ -50,7 +50,7 @@ let heatmap_p5 = new p5(function(p) {
 
     p.draw = function() {
         p.clear();
-        const top = 100, left = 100, right = 100, bottom = 30, count = 20;
+        const top = 30, left = 100, right = 30, bottom = 30, count = 20;
         const rectHeight = (p.height - top - bottom) / count;
         const rectWidth = (p.width - left - right) / years.length;
         for (let i = 0; i < count; ++i) {
@@ -59,6 +59,15 @@ let heatmap_p5 = new p5(function(p) {
                 p.noStroke();
                 p.rect(left + j * rectWidth, top + i * rectHeight, rectWidth, rectHeight);
             }
+            const regExp = /\(([^)]+)\)/;
+            const matches = regExp.exec(groups[i]);
+            let text = groups[i];
+            if (matches !== null) {
+                text = matches[1];
+            }
+            p.fill("white");
+            p.textAlign(p.RIGHT, p.CENTER);
+            p.text(text, left - 10, top + rectHeight / 2 + i * rectHeight);
         }
         if (p.mouseX >= left && p.mouseX < p.width - right && p.mouseY >= top && p.mouseY < p.height - bottom) {
             const x = Math.floor((p.mouseX - left) / rectWidth);
@@ -74,23 +83,31 @@ let heatmap_p5 = new p5(function(p) {
             p.textSize(15);
             p.text(years[x], left + rectWidth / 2 + x * rectWidth, p.height - bottom + 10);
             p.textAlign(p.CENTER, p.BOTTOM);
-            p.text(years[x], left + rectWidth / 2 + x * rectWidth, top - 10);
-            p.textAlign(p.RIGHT, p.CENTER);
-            const regExp = /\(([^)]+)\)/;
-            const matches = regExp.exec(groups[y]);
-            let text = groups[y];
-            if (matches !== null) {
-                text = matches[1];
-            }
-            p.text(text, left - 10, top + rectHeight / 2 + y * rectHeight);
+            // p.text(years[x], left + rectWidth / 2 + x * rectWidth, top - 10);
+            // p.textAlign(p.RIGHT, p.CENTER);
+            // const regExp = /\(([^)]+)\)/;
+            // const matches = regExp.exec(groups[y]);
+            // let text = groups[y];
+            // if (matches !== null) {
+            //     text = matches[1];
+            // }
+            // p.text(text, left - 10, top + rectHeight / 2 + y * rectHeight);
             p.textAlign(p.LEFT, p.CENTER);
-            p.text(text, p.width - right + 10, top + rectHeight / 2 + y * rectHeight);
-            if (x < years.length - 2) {
+            // p.text(text, p.width - right + 10, top + rectHeight / 2 + y * rectHeight);
+            if (x < years.length - 4) {
                 p.text(data[y][x], (x + 1) * rectWidth + left + 10, top + rectHeight / 2 + y * rectHeight);
             }
-            if (x >= 2) {
+            if (x >= 4) {
                 p.textAlign(p.RIGHT, p.CENTER);
                 p.text(data[y][x], x * rectWidth + left - 10, top + rectHeight / 2 + y * rectHeight);
+            }
+        } else {
+            for (let i = 0; i < years.length; i += 5) {
+                p.textAlign(p.CENTER, p.TOP);
+                p.noStroke();
+                p.fill("white");
+                p.textSize(15);
+                p.text(years[i], left + rectWidth / 2 + i * rectWidth, p.height - bottom + 10);
             }
         }
     };
