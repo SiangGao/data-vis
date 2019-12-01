@@ -145,17 +145,32 @@ let individual_incident_p5 = new p5(function(p) {
         p.text(year, p.mouseX, yhi);
     }
 
+    p.drawYears = function(xlo, xhi, y) {
+        p.textAlign(p.CENTER, p.CENTER);
+        p.stroke("black");
+        p.fill(boundaryColor);
+        p.strokeWeight(1);
+        p.textSize(20);
+        for (let i = 0; i <= 2017 - 1970; i += 5) {
+            p.text(1970 + i, xlo + (xhi - xlo) / (2017 - 1970) * i, y);
+        }
+    }
+
     p.draw = function() {
         p.clear();
         //p.background('black');
         const marginh = 40, marginv = 70;
-        
-        p.drawData(marginh, p.width - marginh, marginv, p.height / 2 - 10, true, [ 'line', 'dots']);
-        p.drawData(marginh, p.width - marginh, p.height / 2 + 10, p.height - marginv, false, ['line', 'dots']);
-        
+                
         const d = p.mouseX - marginh + dotWidth/2;
         const w = (p.width - 2 * marginh) / (2017 - 1970);
         const idx = Math.floor(d / w);
+
+        if (!(idx >= 0 && idx <= 47)) {
+            p.drawYears(marginh, p.width - marginh, p.height / 2 + 10);
+        }
+        p.drawData(marginh, p.width - marginh, marginv, p.height / 2 - 10, true, [ 'line', 'dots']);
+        p.drawData(marginh, p.width - marginh, p.height / 2 + 10, p.height - marginv, false, ['line', 'dots']);
+
         if (idx >= 0 && idx <= 47) {
             const d = p.mouseX - marginh + dotWidth/2;
             const w = (p.width - 2 * marginh) / (2017 - 1970);
